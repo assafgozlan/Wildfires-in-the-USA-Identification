@@ -126,10 +126,77 @@ Visual results and plots are available in:
 ---
 
 ## 📁 Repository Structure
-```text
+```
 ├── project_190223.ipynb              # Main notebook – full ML pipeline
 ├── meteoStatTry.ipynb                # Weather data integration & EDA
 ├── cause_stats.py                    # Script to compute prior features
 ├── requirements.txt                  # Dependencies
 ├── Applied Competitive Lab Final Project.pdf   # Final report (EDA + results)
 └── README.md                         # This file
+```
+
+---
+
+## ▶️ How to Run the Project
+
+### Step 1 — Clone the Repository
+```bash
+git clone https://github.com/assafgozlan/Wildfires-in-the-USA-Identification.git
+cd Wildfires-in-the-USA-Identification
+```
+
+### Step 2 — Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Step 3 — Prepare the Data
+Download and extract the data from the  
+[Google Drive folder](https://drive.google.com/drive/folders/1ZY3o190w7mjXHIr2n_QXgOj1iv4hnlqP?usp=sharing)  
+and place the following files in the root directory:
+```
+met_data_clean.pkl
+stations_df_clean.pkl
+states_parks.csv
+units_try.csv
+FPA_FOD_20170508.sqlite
+```
+
+### Step 4 — Run the Main Notebook
+Open **`project_190223.ipynb`** using Jupyter Notebook or VSCode.
+
+At the top of the notebook, configure paths:
+```python
+train_path = None            # use default database if None
+test_path  = None
+units_csv_path = "units_try.csv"
+```
+
+Then click **Run All Cells** to execute the pipeline:
+- Data loading and merging  
+- Feature engineering  
+- Model training (Random Forest + Bayesian Optimization)  
+- Evaluation and visualization  
+
+### Step 5 — Optional Components
+- Run **`meteoStatTry.ipynb`** for weather data analysis.  
+- Execute **`cause_stats.py`** to recompute prior probability features.  
+
+---
+
+## 📚 Deliverables
+- **Final report:** `Applied Competitive Lab Final Project.pdf`  
+  Includes detailed analysis, figures, and mathematical background.  
+- **Main code:** `project_190223.ipynb`  
+  Implements the full end-to-end workflow.  
+- **External scripts:** `cause_stats.py`, `meteoStatTry.ipynb`.  
+
+---
+
+## 👥 Authors
+**Assaf Gozlan**, **Dor Tal**, **Liav Aharon**, **David Guedalia**  
+*M.Sc. in Computer Science, The Hebrew University of Jerusalem (2025)*  
+*Applied Competitive Lab — Data Science & Machine Learning Project*
+
+---
+
